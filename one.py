@@ -14,6 +14,8 @@ class Choice(Enum):
     fire = 4
     water = 5
     air = 6
+    cool = 7
+
 class Person:
     hp = 100
     power = POWER
