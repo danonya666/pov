@@ -62,7 +62,7 @@ class Person:
 
         :param other: Person
         """
-        print(f'{self} battling with {other}')
+        print(f'{self} battling with {other} {"bot" if other.is_bot else "human"}')
         rps = self.rps()
         if not other.is_bot:
             his_rps = other.rps()
