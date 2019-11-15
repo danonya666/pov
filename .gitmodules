@@ -1,0 +1,6 @@
+[submodule "vkproj"]
+	path = vkproj
+	url = https://github.com/Chank1e/vkproj.git
+[submodule "hhm"]
+	path = hhm
+	url = https://github.com/Chank1e/hhm.git
