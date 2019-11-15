@@ -12,6 +12,7 @@ class Choice(Enum):
     paper = 2
     scissors = 3
     fire = 4
+    water = 5
 
 class Person:
     hp = 100
