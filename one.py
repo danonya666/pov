@@ -18,6 +18,7 @@ class Choice(Enum):
 
 
 
+
 class Person:
     hp = 100
     power = POWER
