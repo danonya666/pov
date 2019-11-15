@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from one import Game, Person, POWER, Choice
+from pov.one import Person, POWER, Choice
 
 
 class TestPerson(TestCase):
