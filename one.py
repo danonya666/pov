@@ -57,6 +57,11 @@ class Person:
         choice = random.choice(list(Choice))
         return choice
 
+    def name_reverse(self):
+        name = self.name
+        name = name[::-1]
+        self.name = name
+
     def attack(self, other):
         """
 
