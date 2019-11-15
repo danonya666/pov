@@ -13,7 +13,7 @@ class Choice(Enum):
     scissors = 3
     fire = 4
     water = 5
-
+    air = 6
 class Person:
     hp = 100
     power = POWER
