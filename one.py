@@ -11,7 +11,7 @@ class Choice(Enum):
     rock = 1
     paper = 2
     scissors = 3
-
+    fire = 4
 
 class Person:
     hp = 100
