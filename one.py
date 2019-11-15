@@ -16,6 +16,8 @@ class Choice(Enum):
     air = 6
     cool = 7
 
+
+
 class Person:
     hp = 100
     power = POWER
