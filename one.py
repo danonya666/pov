@@ -11,7 +11,10 @@ class Choice(Enum):
     rock = 1
     paper = 2
     scissors = 3
-
+    fire = 4
+    water = 5
+    air = 6
+    cool = 7
 
 class Person:
     hp = 100
@@ -53,16 +56,29 @@ class Person:
             elif result == 's':
                 return Choice.scissors
 
+    def generate_rps(self):
+        choice = random.choice(list(Choice))
+        return choice
+
+    def name_reverse(self):
+        name = self.name
+        name = name[::-1]
+        self.name = name
+
     def attack(self, other):
         """
 
         :param other: Person
         """
-        print(f'{self} battling with {other}')
+        print(f'{self} battling with {other} {"bot" if other.is_bot else "human"}')
         rps = self.rps()
-        # if not other.is_bot:
-        his_rps = other.rps()
-        fight_result = self.rps_result(rps, his_rps)
+        if not other.is_bot:
+            his_rps = other.rps()
+            fight_result = self.rps_result(rps, his_rps)
+        else:
+            his_rps = other.generate_rps()
+            fight_result = self.rps_result(rps, his_rps)
+
         winner = self if fight_result == 1 else (None if fight_result == 0 else other)
         looser = self if fight_result == -1 else (None if fight_result == 0 else other)
         if winner and looser:
@@ -109,12 +125,15 @@ class Game:
         player = Person(name)
         self.players.append(player)
         choice = ''
+        player2 = ''
         while choice != 's' and choice != 'm':
             choice = input('solo(s)/multiplayer(m)?\n')
         if choice == 'm':
             player2 = input('Player2 name\n ')
-            new_person = Person(player2)
-            self.players.append(new_person)
+        elif choice == 's':
+            player2 = Person('bot', True)
+        new_person = Person(player2)
+        self.players.append(new_person)
 
         while all(x.hp > 0 for x in self.players):
             for i in range(len(self.players)):
