@@ -152,5 +152,6 @@ class Game:
 
 
 if __name__ == '__main__':
+    print('new game starts')
     game = Game()
     game.run()
